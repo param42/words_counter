@@ -22,7 +22,7 @@ int main(int argc, char* argv[])
     bp::pistream &is = child.get_stdout();
 
     std::string line;
-    std::regex str("\\S+\\s*"); //непробельные символы
+    std::regex str("\\S+\\s*"); 
     std::smatch match;
     auto w_counter = 0;
     while (std::getline(is, line))
