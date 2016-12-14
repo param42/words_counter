@@ -8,8 +8,8 @@ bp::child start_child(std::string exec)
 {
     std::vector<std::string> args;
     args.push_back(exec);
-    bp::context ctx;
-    ctx.stdout_behavior = bp::capture_stream();
+    bp::context ctx; // specifying the executable name and the arguments
+    ctx.stdout_behavior = bp::capture_stream();//если родитель хочет считывать поток вывода child
     
     return bp::launch(exec, args, ctx);
 }
